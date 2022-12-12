@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { getMovies } from '../../redux/actions/movie.action';
 
 @Component({
   selector: 'app-header',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor() {}
-  getMovies() {}
+  constructor(private store: Store) {}
+  getMovies() {
+    this.store.dispatch(getMovies());
+  }
 }

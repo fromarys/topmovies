@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './core/redux/reducers/movie.reducer';
+import { MovieEffect } from './core/redux/effects/movie.effect';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +31,7 @@ import { reducers } from './core/redux/reducers/movie.reducer';
         strictActionTypeUniqueness: true,
       },
     }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([MovieEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

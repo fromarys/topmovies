@@ -8,6 +8,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { KeyInterceptor } from './interceptors/key.interceptor';
 
 @NgModule({
   declarations: [HeaderComponent, MainComponent, SnackbarComponent],
@@ -20,5 +22,12 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     MatTableModule,
   ],
   exports: [HeaderComponent, MainComponent],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: KeyInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class CoreModule {}
