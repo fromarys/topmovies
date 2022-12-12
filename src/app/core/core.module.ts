@@ -7,9 +7,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 @NgModule({
-  declarations: [HeaderComponent, MainComponent],
+  declarations: [HeaderComponent, MainComponent, SnackbarComponent],
   imports: [
     CommonModule,
     MatToolbarModule,

@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  API_URL: 'https://imdb-api.com/en/API',
 };
 
 /*
