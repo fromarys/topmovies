@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
+import { reducers } from './core/redux/reducers/movie.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,16 @@ import { StoreModule } from '@ngrx/store';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+        strictActionWithinNgZone: true,
+        strictActionTypeUniqueness: true,
+      },
+    }),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
