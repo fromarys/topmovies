@@ -12,6 +12,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './core/redux/reducers/movie.reducer';
 import { MovieEffect } from './core/redux/effects/movie.effect';
+import { MovieErrorEffect } from './core/redux/effects/error.effect';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,7 +32,7 @@ import { MovieEffect } from './core/redux/effects/movie.effect';
         strictActionTypeUniqueness: true,
       },
     }),
-    EffectsModule.forRoot([MovieEffect]),
+    EffectsModule.forRoot([MovieEffect, MovieErrorEffect]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
