@@ -1,0 +1,17 @@
+.table {
+  height: calc(75vh);
+  overflow-y: scroll;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  &__image {
+    max-width: 150px;
+  }
+  &__cell-image {
+    padding-top: 5px;
+  }
+}
+
+td.mat-cell {
+  text-align: center;
+}

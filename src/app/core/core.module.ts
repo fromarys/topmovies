@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { KeyInterceptor } from './interceptors/key.interceptor';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [HeaderComponent, MainComponent, SnackbarComponent],
@@ -20,6 +21,7 @@ import { KeyInterceptor } from './interceptors/key.interceptor';
     MatButtonModule,
     MatSnackBarModule,
     MatTableModule,
+    MatProgressSpinnerModule,
   ],
   exports: [HeaderComponent, MainComponent],
   providers: [
